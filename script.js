@@ -82,9 +82,10 @@ function setStartDate() {
     localStorage.setItem('startDate', startDate);
 
 
+
     // تحديث التقويم
     generateCalendar();
-    alert("تم حفظ التاريخ والتطبيق بنجاح .");
+        alert("تم حفظ التاريخ والتطبيق بنجاح .");
 
 }
 
