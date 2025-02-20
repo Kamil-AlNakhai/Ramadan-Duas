@@ -65,11 +65,25 @@ function generateCalendar() {
         honeycomb.appendChild(day);
     }
 }
-
 function setStartDate() {
     const dateInput = document.getElementById('startDate');
-    startDate = new Date(dateInput.value);
+    const selectedDate = new Date(dateInput.value);
+    const today = new Date();
+
+    // التحقق من أن التاريخ المحدد ليس في المستقبل
+    if (selectedDate > today) {
+        alert("لا يمكن تحديد تاريخ في المستقبل. الرجاء اختيار تاريخ صحيح.");
+        return;
+    }
+
+    startDate = selectedDate;
+        // عرض رسالة تأكيد
+    alert("تم تحديد تاريخ البداية بنجاح. قم بالحفظ لتطبيق النتائج.");
     localStorage.setItem('startDate', startDate);
+
+
+
+    // تحديث التقويم
     generateCalendar();
 }
 
