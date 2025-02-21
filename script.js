@@ -56,10 +56,11 @@ function generateCalendar() {
         day.textContent = `دعاء اليوم ${i}`;
         day.addEventListener('click', () => openPopup(days[i - 1]));
 
-        if (i < daysPassed) {
-            day.classList.add('past');
-        } else if (i === daysPassed) {
-            day.classList.add('current');
+        if (i <= daysPassed) {
+            day.classList.add('past'); // تلوين الأيام الماضية باللون الأصفر
+        }
+        if (i === daysPassed + 1) {
+            day.classList.add('current'); // تلوين اليوم الحالي باللون الأخضر
         }
 
         honeycomb.appendChild(day);
